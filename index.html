@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahsaas Bajaj - ML Engineer & Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #fafaf9;
+            --bg-secondary: #ffffff;
+            --bg-accent: #0f172a;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-accent: #0ea5e9;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            border-color: var(--text-accent);
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--text-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .hero-links a {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--bg-accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-accent);
+            color: var(--text-accent);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeIn 1s ease 0.4s backwards;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--text-accent);
+            border-radius: 2px;
+        }
+
+        /* Experience Cards */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--text-accent), transparent);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--text-accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .experience-company {
+            color: var(--text-accent);
+            font-weight: 500;
+        }
+
+        .experience-date {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .experience-highlights {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .experience-highlights li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .experience-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--text-accent);
+        }
+
+        /* Publications Grid */
+        .publications-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .publication-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .publication-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(8px);
+            border-color: var(--text-accent);
+        }
+
+        .publication-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .publication-authors {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-venue {
+            color: var(--text-accent);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        /* Patents */
+        .patents-list {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .patent-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--text-accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .patent-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .patent-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .patent-status {
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .patent-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Speaking Engagements */
+        .speaking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .speaking-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .speaking-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .speaking-event {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .speaking-topic {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .speaking-date {
+            color: var(--text-accent);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .award-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #fbbf24;
+        }
+
+        .award-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #92400e;
+        }
+
+        .award-description {
+            font-size: 0.875rem;
+            color: #78350f;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-accent);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#"><img src="headshot_edited.png" alt="Ahsaas Bajaj" class="nav-logo"></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#patents">Patents</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#speaking">Speaking</a></li>
+                <li><a href="#awards">Awards</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ahsaas Bajaj</h1>
+            <p class="hero-subtitle">Senior ML Engineer & Researcher</p>
+            <p class="hero-description">
+                Specializing in large-scale recommendation systems, applied NLP, and production ML. 
+                Inventor of patented ML systems deployed at scale, with peer-reviewed research cited 100+ times.
+            </p>
+            <div class="hero-links">
+                <a href="mailto:bajajahsaas@gmail.com" class="btn-primary">Get in Touch</a>
+                <a href="https://linkedin.com/in/ahsaasbajaj" class="btn-secondary" target="_blank">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=RNCwyNUAAAAJ" class="btn-secondary" target="_blank">Scholar</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="headshot_edited.png" alt="Ahsaas Bajaj" class="profile-image">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$200M+</div>
+                    <div class="stat-label">Incremental GTV Influenced</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">127</div>
+                    <div class="stat-label">Research Citations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Granted/Published Patents</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">300M+</div>
+                    <div class="stat-label">Annual ML Requests</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header">
+            <h2 class="section-title">About</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-secondary);">
+            <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">
+                I'm a Senior Machine Learning Engineer at Instacart, where I build large-scale recommendation 
+                systems that process hundreds of millions of orders annually. My work focuses on personalized 
+                ML recommendations, intelligent product substitution algorithms, and technical infrastructure.
+            </p>
+            <p style="font-size: 1.125rem;">
+                Previously, I developed on-device AI systems at Samsung R&D and worked on large-scale 
+                personalization at Walmart Labs. I hold an MS in Computer Science from UMass Amherst 
+                and serve as an invited reviewer for top-tier AI venues including AAAI, KDD, and ACL.
+            </p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header">
+            <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Senior Machine Learning Engineer II</h3>
+                        <div class="experience-company">Instacart - Content AI Team</div>
+                    </div>
+                    <div class="experience-date">Apr 2022 – Present</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Delivered $17.3M+ in incremental contribution profit and influenced $202M+ in GTV through personalized replacements ML systems</li>
+                    <li>Drove +0.32pp improvement in Good Fill Rate and 24% reduction in disapproved replacements</li>
+                    <li>Architected production ML platform supporting 300M+ annual requests with 95%+ satisfaction</li>
+                    <li>Served as de facto technical lead, defining roadmap and experimentation standards</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Data Scientist</h3>
+                        <div class="experience-company">Walmart Labs - Personalization Team</div>
+                    </div>
+                    <div class="experience-date">Feb 2021 - Apr 2022</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Built large-scale recommendation systems to power Walmart grocery experience</li>
+                    <li>Led efforts on customer repurchase journey and improved diversity in recommendations</li>
+                    <li>Achieved 1% improvement in basket predictions through affinity modeling</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Software Engineering Intern</h3>
+                        <div class="experience-company">Instabase - Documents Insights Team</div>
+                    </div>
+                    <div class="experience-date">May 2020 - Aug 2020</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Delivered BERT-based entity recognition and Table QA in production using GRPC & Kubernetes</li>
+                    <li>Improved recall by 17% for extraction from W2 forms and resumes</li>
+                    <li>Developed NLP framework for model training, fine-tuning, and evaluation</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Senior Software Engineer</h3>
+                        <div class="experience-company">Samsung R&D Institute - on-Device AI Team</div>
+                    </div>
+                    <div class="experience-date">Jul 2017 - Jul 2019</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Commercialized on-device unified search engine handling 5M daily queries</li>
+                    <li>Improved first search performance by 40x using design patterns and Flatbuffers</li>
+                    <li>Increased recall by 25% using Rocchio query expansion and semantic matching</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="patents">
+        <div class="section-header">
+            <h2 class="section-title">Patents</h2>
+        </div>
+        <div class="patents-list">
+            <div class="patent-card">
+                <h3 class="patent-title">Systems and methods for altering a GUI based on affinity and repurchase intent</h3>
+                <div class="patent-meta">
+                    <span class="patent-status">Granted - US</span>
+                    <span style="color: var(--text-secondary);">Walmart Apollo, LLC</span>
+                </div>
+                <p class="patent-description">
+                    Describes systems that infer real-time user affinity and repurchase intent from in-session 
+                    behavior and dynamically adapt GUI elements to improve relevance, engagement, and conversion.
+                </p>
+            </div>
+
+            <div class="patent-card">
+                <h3 class="patent-title">Generating item replacements using ML-based language models</h3>
+                <div class="patent-meta">
+                    <span class="patent-status">Published - US</span>
+                    <span style="color: var(--text-secondary);">Maplebear Inc. (Instacart)</span>
+                </div>
+                <p class="patent-description">
+                    Describes LLM-based systems that generate product replacements, evaluate replacement quality, 
+                    and produce natural-language explanations for low-quality substitutions.
+                </p>
+            </div>
+
+            <div class="patent-card">
+                <h3 class="patent-title">Selecting replacement items based on ML predictions</h3>
+                <div class="patent-meta">
+                    <span class="patent-status">Published - US</span>
+                    <span style="color: var(--text-secondary);">Maplebear Inc. (Instacart)</span>
+                </div>
+                <p class="patent-description">
+                    Describes predictive ML systems that rank and select replacement items using weighted 
+                    probabilities of positive and negative fulfillment outcomes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="section-header">
+            <h2 class="section-title">Publications</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-top: 1rem;">
+                Total Citations: 127 | H-index: 5 | Total Papers: 9
+            </p>
+        </div>
+        <div class="publications-grid">
+            <div class="publication-card">
+                <a href="https://aclanthology.org/2021.acl-srw.7/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">Long Document Summarization in a Low Resource Setting using Pretrained Language Models</div>
+                </a>
+                <div class="publication-authors">Ahsaas Bajaj, Pavitra Dangati, Kalpesh Krishna, et al.</div>
+                <div class="publication-venue">ACL-IJCNLP 2021</div>
+            </div>
+
+            <div class="publication-card">
+                <a href="https://aclanthology.org/2020.findings-emnlp.270/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">An Instance Level Approach for Shallow Semantic Parsing in Scientific Procedural Text</div>
+                </a>
+                <div class="publication-authors">Daivik Swarup, Ahsaas Bajaj, Rajarshi Das, Andrew McCallum, et al.</div>
+                <div class="publication-venue">Findings of EMNLP 2020</div>
+            </div>
+
+            <div class="publication-card">
+                <a href="https://link.springer.com/chapter/10.1007/978-3-030-23281-8_3" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">Learning Mobile App Embeddings using Multi-task Neural Networks</div>
+                </a>
+                <div class="publication-authors">Ahsaas Bajaj, Shubham Krishna, et al.</div>
+                <div class="publication-venue">Springer NLDB 2019</div>
+            </div>
+
+            <div class="publication-card">
+                <a href="https://arxiv.org/abs/1904.06672" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">RelEmb: A relevance-based application embedding for mobile app retrieval</div>
+                </a>
+                <div class="publication-authors">Ahsaas Bajaj, Shubham Krishna, et al.</div>
+                <div class="publication-venue">CICLing 2019</div>
+            </div>
+
+            <div class="publication-card">
+                <a href="https://dl.acm.org/doi/10.1145/3297001.3297017" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">Enhanced Learning to Rank using Cluster-loss Adjustment</div>
+                </a>
+                <div class="publication-authors">Ahsaas Bajaj, Hemant Tiwari, Vanraj Vala</div>
+                <div class="publication-venue">ACM CODS-COMAD 2019</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speaking">
+        <div class="section-header">
+            <h2 class="section-title">Speaking Engagements</h2>
+        </div>
+        <div class="speaking-grid">
+            <div class="speaking-card">
+                <div class="speaking-event">Cohere Labs - ML Industry Perspectives</div>
+                <div class="speaking-topic">Production-grade ML systems and real-world recommendation challenges</div>
+                <div class="speaking-date">January 2026</div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="speaking-event">Data Science Salon - DSS Break</div>
+                <div class="speaking-topic">Applied ML, system design, and evaluation practices in industry</div>
+                <div class="speaking-date">February 2026</div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="speaking-event">New York AI Engineers Tech Talk</div>
+                <div class="speaking-topic">ML systems for e-commerce and personalization</div>
+                <div class="speaking-date">March 2026</div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="speaking-event">Data Science Salon - E-commerce & Retail</div>
+                <div class="speaking-topic">Applied ML: quality, evaluation, and business impact at scale</div>
+                <div class="speaking-date">April 2026 - Seattle</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <div class="section-header">
+            <h2 class="section-title">Awards & Recognition</h2>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-title">Forbes Technology Council Member</div>
+                <div class="award-description">Invitation-only membership (10-11% acceptance rate) recognizing senior technology leaders</div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">Instacart Individual Tech Achievement Award</div>
+                <div class="award-description">Recognized for exceptional technical contributions and high-impact ML initiatives (2024)</div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">Samsung Citizen Award</div>
+                <div class="award-description">Outstanding individual performance and contributions beyond functional scope</div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">Samsung Software Competency Level: Professional</div>
+                <div class="award-description">Ranked among top 20% of organization</div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">Institute Rank 2</div>
+                <div class="award-description">Ranked 2nd among 800+ undergraduate students at NSIT, University of Delhi</div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">ACM ICPC India Nationals Qualifier</div>
+                <div class="award-description">Qualified for Indian Nationals of highly competitive global programming contest (2015)</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="mailto:bajajahsaas@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/ahsaasbajaj" target="_blank">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=RNCwyNUAAAAJ" target="_blank">Google Scholar</a>
+            </div>
+            <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.875rem;">
+                © 2026 Ahsaas Bajaj. Built with passion for ML and elegant code.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
