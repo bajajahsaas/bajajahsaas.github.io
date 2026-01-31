@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahsaas Bajaj - ML Engineer & Researcher</title>
+    <title>Ahsaas Bajaj - ML Engineer & Researcher | Production ML, Personalization & AI</title>
+    <meta name="description" content="Ahsaas Bajaj - Senior ML Engineer at Instacart specializing in large-scale recommendation systems, NLP, and production ML. Inventor of 3 patents with 127+ research citations and $200M+ business impact.">
+    <meta name="keywords" content="machine learning, ML engineer, recommendation systems, NLP, AI, personalization, Instacart, research, patents">
+    <meta name="author" content="Ahsaas Bajaj">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Ahsaas Bajaj - ML Engineer & Researcher">
+    <meta property="og:description" content="Senior ML Engineer specializing in large-scale recommendation systems and production ML">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bajajahsaas.github.io">
+    <meta property="og:image" content="https://bajajahsaas.github.io/headshot.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ahsaas Bajaj - ML Engineer & Researcher">
+    <meta name="twitter:description" content="Senior ML Engineer specializing in large-scale recommendation systems and production ML">
+    <meta name="twitter:image" content="https://bajajahsaas.github.io/headshot.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +36,19 @@
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-accent: #f1f5f9;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-accent: #38bdf8;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
         }
 
         * {
@@ -537,6 +567,281 @@
             }
         }
 
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-accent);
+            color: var(--bg-secondary);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category-icon {
+            font-size: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            color: #1e40af;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid #bfdbfe;
+            transition: all 0.2s ease;
+        }
+
+        [data-theme="dark"] .skill-tag {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #38bdf8;
+            border-color: #475569;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--text-accent);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-company {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-metric {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 0.75rem;
+            background: var(--bg-primary);
+            border-radius: 8px;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-accent);
+            font-family: 'Fraunces', serif;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-description {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--text-accent);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value {
+            color: var(--text-accent);
+            font-size: 0.875rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--text-accent);
+            color: white;
+            border-color: var(--text-accent);
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
@@ -549,12 +854,34 @@
                 font-size: 2.5rem;
             }
 
+            .hero-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .hero-links a {
+                width: 100%;
+                text-align: center;
+            }
+
             .stats-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .nav-links {
-                gap: 1rem;
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .section-title {
@@ -563,6 +890,61 @@
 
             .experience-header {
                 flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-metrics {
+                flex-direction: column;
+            }
+
+            .project-metric {
+                min-width: 100%;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .theme-toggle {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .social-links {
+                gap: 0.5rem;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
             }
         }
     </style>
@@ -573,14 +955,12 @@
             <a href="#"><img src="headshot.png" alt="Ahsaas Bajaj" class="nav-logo"></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#patents">Patents</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#articles">Articles</a></li>
+                <li><a href="#publications">Research</a></li>
                 <li><a href="#speaking">Speaking</a></li>
-                <li><a href="#memberships">Memberships</a></li>
-                <li><a href="#judging">Judging</a></li>
-                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -595,6 +975,7 @@
             </p>
             <div class="hero-links">
                 <a href="mailto:bajajahsaas@gmail.com" class="btn-primary">Get in Touch</a>
+                <a href="#" class="btn-secondary" download>Download Resume</a>
                 <a href="https://linkedin.com/in/ahsaasbajaj" class="btn-secondary" target="_blank">LinkedIn</a>
                 <a href="https://scholar.google.com/citations?user=RNCwyNUAAAAJ" class="btn-secondary" target="_blank">Scholar</a>
             </div>
@@ -626,17 +1007,276 @@
         <div class="section-header">
             <h2 class="section-title">About</h2>
         </div>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-secondary);">
-            <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">
-                I'm a Senior Machine Learning Engineer at Instacart, where I build large-scale recommendation 
-                systems that process hundreds of millions of orders annually. My work focuses on personalized 
-                ML recommendations, intelligent product substitution algorithms, and technical infrastructure.
+        <div style="max-width: 900px; margin: 0 auto; color: var(--text-secondary);">
+            <p style="margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.8;">
+                I'm a <strong style="color: var(--text-primary);">Senior Machine Learning Engineer at Instacart</strong>, where I build large-scale recommendation
+                systems that process hundreds of millions of orders annually. My work focuses on personalized
+                ML recommendations, intelligent product substitution algorithms, and technical infrastructure that
+                drives business impact measured in hundreds of millions of dollars.
             </p>
-            <p style="font-size: 1.125rem;">
-                Previously, I developed on-device AI systems at Samsung R&D and worked on large-scale 
-                personalization at Walmart Labs. I hold an MS in Computer Science from UMass Amherst 
-                and serve as an invited reviewer for top-tier AI venues including AAAI, KDD, and ACL.
+            <p style="margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.8;">
+                With over <strong style="color: var(--text-primary);">10 years of experience</strong> in ML and software engineering, I've delivered production systems
+                at scale across multiple domains. My expertise spans <strong style="color: var(--text-primary);">recommendation systems, NLP, production ML infrastructure,
+                and applied research</strong>, with a track record of translating research into measurable business outcomes.
             </p>
+            <p style="margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.8;">
+                Previously, I developed <strong style="color: var(--text-primary);">on-device AI systems at Samsung R&D</strong> handling 5M+ daily queries,
+                and built large-scale personalization systems at <strong style="color: var(--text-primary);">Walmart Labs</strong>. I hold an
+                <strong style="color: var(--text-primary);">MS in Computer Science from UMass Amherst</strong>, where I conducted research
+                in NLP and machine learning.
+            </p>
+            <p style="margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.8;">
+                I'm an active contributor to the research community with <strong style="color: var(--text-primary);">127+ citations</strong>,
+                <strong style="color: var(--text-primary);">9 peer-reviewed publications</strong>, and <strong style="color: var(--text-primary);">3 granted/published patents</strong>.
+                I serve as an <strong style="color: var(--text-primary);">invited reviewer for premier AI conferences</strong> including AAAI, KDD (Applied Data Science),
+                ACL, WWW, and UMAP, having served on 10+ technical program committees.
+            </p>
+            <p style="font-size: 1.125rem; line-height: 1.8;">
+                Beyond my work, I'm a member of the <strong style="color: var(--text-primary);">Forbes Technology Council</strong> and
+                <strong style="color: var(--text-primary);">International Academy of Digital Arts & Sciences</strong>. I regularly speak at
+                industry conferences and events about production ML systems, personalization, and applied AI at scale.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <h2 class="section-title">Skills & Expertise</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">🤖</span>
+                    Machine Learning & AI
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">XGBoost</span>
+                    <span class="skill-tag">LightGBM</span>
+                    <span class="skill-tag">Hugging Face</span>
+                    <span class="skill-tag">LLMs</span>
+                    <span class="skill-tag">BERT</span>
+                    <span class="skill-tag">Transformers</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">💻</span>
+                    Programming & Development
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">gRPC</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">☁️</span>
+                    Cloud & Infrastructure
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">GCP</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Airflow</span>
+                    <span class="skill-tag">MLflow</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">🎯</span>
+                    Specializations
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Recommendation Systems</span>
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">Personalization</span>
+                    <span class="skill-tag">Ranking Algorithms</span>
+                    <span class="skill-tag">A/B Testing</span>
+                    <span class="skill-tag">Experimentation</span>
+                    <span class="skill-tag">Production ML</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">🗄️</span>
+                    Data & Databases
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Elasticsearch</span>
+                    <span class="skill-tag">Spark</span>
+                    <span class="skill-tag">Hive</span>
+                    <span class="skill-tag">DynamoDB</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">📊</span>
+                    Research & Analysis
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Statistical Analysis</span>
+                    <span class="skill-tag">Experimental Design</span>
+                    <span class="skill-tag">Research Publications</span>
+                    <span class="skill-tag">Peer Review</span>
+                    <span class="skill-tag">Technical Writing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <h2 class="section-title">Key Projects & Impact</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Personalized Replacements ML System</h3>
+                    <div class="project-company">Instacart</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Architected and deployed large-scale ML platform for intelligent product substitutions,
+                        processing 300M+ annual requests with industry-leading accuracy and customer satisfaction.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
+                            <div class="metric-value">$17.3M+</div>
+                            <div class="metric-label">Contribution Profit</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">$202M+</div>
+                            <div class="metric-label">GTV Influenced</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">+0.32pp</div>
+                            <div class="metric-label">Fill Rate Improvement</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">95%+</div>
+                            <div class="metric-label">Satisfaction Rate</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">A/B Testing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">On-Device Unified Search Engine</h3>
+                    <div class="project-company">Samsung R&D</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Commercialized intelligent on-device search engine using semantic matching and query expansion,
+                        handling millions of daily queries across Samsung mobile devices worldwide.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
+                            <div class="metric-value">5M</div>
+                            <div class="metric-label">Daily Queries</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">40x</div>
+                            <div class="metric-label">Performance Gain</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">+25%</div>
+                            <div class="metric-label">Recall Improvement</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">FlatBuffers</span>
+                        <span class="tech-tag">Information Retrieval</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">BERT-based Entity Recognition</h3>
+                    <div class="project-company">Instabase</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Delivered production NLP system for entity extraction and Table QA using BERT models,
+                        deployed via GRPC and Kubernetes for high-throughput document processing.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
+                            <div class="metric-value">+17%</div>
+                            <div class="metric-label">Recall Improvement</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">Production</div>
+                            <div class="metric-label">Deployment Status</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">gRPC</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">NER</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Affinity & Repurchase Intent System</h3>
+                    <div class="project-company">Walmart Labs</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Built large-scale recommendation system with real-time affinity modeling for Walmart grocery,
+                        powering personalized experiences for millions of customers. Granted US Patent.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
+                            <div class="metric-value">+1%</div>
+                            <div class="metric-label">Basket Prediction</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">Patent</div>
+                            <div class="metric-label">US12406282B2</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Spark</span>
+                        <span class="tech-tag">Recommendation Systems</span>
+                        <span class="tech-tag">Real-time ML</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -932,6 +1572,51 @@
         </div>
     </section>
 
+    <section id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Let's Connect</h2>
+        </div>
+        <div class="contact-container">
+            <p class="contact-description">
+                I'm always interested in discussing ML challenges, research collaborations, speaking opportunities,
+                or just connecting with fellow ML practitioners. Feel free to reach out!
+            </p>
+            <div class="contact-methods">
+                <a href="mailto:bajajahsaas@gmail.com" class="contact-method">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">bajajahsaas@gmail.com</div>
+                </a>
+                <a href="https://linkedin.com/in/ahsaasbajaj" target="_blank" class="contact-method">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">Connect with me</div>
+                </a>
+                <a href="https://scholar.google.com/citations?user=RNCwyNUAAAAJ" target="_blank" class="contact-method">
+                    <div class="contact-icon">🎓</div>
+                    <div class="contact-label">Google Scholar</div>
+                    <div class="contact-value">View Research</div>
+                </a>
+                <a href="https://github.com/bajajahsaas" target="_blank" class="contact-method">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-label">GitHub</div>
+                    <div class="contact-value">View Code</div>
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/ahsaasbajaj" target="_blank" class="social-link" title="LinkedIn">in</a>
+                <a href="https://github.com/bajajahsaas" target="_blank" class="social-link" title="GitHub">gh</a>
+                <a href="https://scholar.google.com/citations?user=RNCwyNUAAAAJ" target="_blank" class="social-link" title="Google Scholar">📚</a>
+                <a href="https://twitter.com/ahsaasbajaj" target="_blank" class="social-link" title="Twitter">𝕏</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        🌙
+    </button>
+
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -946,6 +1631,28 @@
     </footer>
 
     <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        updateThemeIcon(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -969,6 +1676,76 @@
                 }
             });
         });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for fade-in animation
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('fade-in-section');
+            observer.observe(section);
+        });
+
+        // Animated counter for stats
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = formatNumber(target);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = formatNumber(Math.floor(current));
+                }
+            }, 16);
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num.toString();
+        }
+
+        // Trigger counter animation when stats are visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        // Extract numbers for animation (simplified)
+                        if (text.includes('M')) {
+                            const num = parseFloat(text) * 1000000;
+                            stat.textContent = '0';
+                            animateCounter(stat, num);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsGrid = document.querySelector('.stats-grid');
+        if (statsGrid) {
+            statsObserver.observe(statsGrid);
+        }
     </script>
 </body>
 </html>
