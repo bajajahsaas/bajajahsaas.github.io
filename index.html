@@ -975,7 +975,7 @@
             </p>
             <div class="hero-links">
                 <a href="mailto:bajajahsaas@gmail.com" class="btn-primary">Get in Touch</a>
-                <a href="#" class="btn-secondary" download>Download Resume</a>
+                <a href="https://drive.google.com/file/d/11e5N1GZVyyBRYFHxXWc4tFtpI70BRqlD/view?usp=drivesdk" class="btn-secondary" target="_blank">Download Resume</a>
                 <a href="https://linkedin.com/in/ahsaasbajaj" class="btn-secondary" target="_blank">LinkedIn</a>
                 <a href="https://scholar.google.com/citations?user=RNCwyNUAAAAJ" class="btn-secondary" target="_blank">Scholar</a>
             </div>
@@ -1364,6 +1364,8 @@
                 <p class="patent-description">
                     Describes systems that infer real-time user affinity and repurchase intent from in-session
                     behavior and dynamically adapt GUI elements to improve relevance, engagement, and conversion.
+                    <br><br>
+                    <strong style="color: var(--text-accent);">🏆 Industry Impact:</strong> Cited by Pinterest, Inc. and University of Texas in recommendation systems research.
                 </p>
             </div>
 
@@ -1378,6 +1380,8 @@
                 <p class="patent-description">
                     Describes LLM-based systems that generate product replacements, evaluate replacement quality,
                     and produce natural-language explanations for low-quality substitutions.
+                    <br><br>
+                    <strong style="color: var(--text-accent);">🏆 Industry Impact:</strong> Cited by Capital One Services, LLC (Fortune 100 company) in ML patent applications.
                 </p>
             </div>
 
@@ -1392,6 +1396,8 @@
                 <p class="patent-description">
                     Describes predictive ML systems that rank and select replacement items using weighted
                     probabilities of positive and negative fulfillment outcomes.
+                    <br><br>
+                    <strong style="color: var(--text-accent);">🏆 Industry Impact:</strong> Recently published (2025) - powering production ML systems at scale.
                 </p>
             </div>
         </div>
@@ -1410,7 +1416,10 @@
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">Long Document Summarization in a Low Resource Setting using Pretrained Language Models</div>
                 </a>
                 <div class="publication-authors">Ahsaas Bajaj, Pavitra Dangati, Kalpesh Krishna, et al.</div>
-                <div class="publication-venue">ACL-IJCNLP 2021</div>
+                <div class="publication-venue">ACL-IJCNLP 2021 • <strong style="color: var(--text-accent);">83 citations</strong></div>
+                <div style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                    <strong style="color: var(--text-accent);">🏆 Research Impact:</strong> Cited by Google Research (NeurIPS 2023), top venues including AAAI, ACL Anthology, ACM Computing Surveys, and Springer journals.
+                </div>
             </div>
 
             <div class="publication-card">
@@ -1418,7 +1427,7 @@
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">An Instance Level Approach for Shallow Semantic Parsing in Scientific Procedural Text</div>
                 </a>
                 <div class="publication-authors">Daivik Swarup, Ahsaas Bajaj, Rajarshi Das, Andrew McCallum, et al.</div>
-                <div class="publication-venue">Findings of EMNLP 2020</div>
+                <div class="publication-venue">Findings of EMNLP 2020 • <strong style="color: var(--text-accent);">5 citations</strong></div>
             </div>
 
             <div class="publication-card">
@@ -1426,7 +1435,7 @@
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">Learning Mobile App Embeddings using Multi-task Neural Networks</div>
                 </a>
                 <div class="publication-authors">Ahsaas Bajaj, Shubham Krishna, et al.</div>
-                <div class="publication-venue">Springer NLDB 2019</div>
+                <div class="publication-venue">Springer NLDB 2019 • <strong style="color: var(--text-accent);">1 citation</strong></div>
             </div>
 
             <div class="publication-card">
@@ -1434,7 +1443,7 @@
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">RelEmb: A relevance-based application embedding for mobile app retrieval</div>
                 </a>
                 <div class="publication-authors">Ahsaas Bajaj, Shubham Krishna, et al.</div>
-                <div class="publication-venue">CICLing 2019</div>
+                <div class="publication-venue">CICLing 2019 • <strong style="color: var(--text-accent);">7 citations</strong></div>
             </div>
 
             <div class="publication-card">
@@ -1442,7 +1451,7 @@
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">Enhanced Learning to Rank using Cluster-loss Adjustment</div>
                 </a>
                 <div class="publication-authors">Ahsaas Bajaj, Hemant Tiwari, Vanraj Vala</div>
-                <div class="publication-venue">ACM CODS-COMAD 2019</div>
+                <div class="publication-venue">ACM CODS-COMAD 2019 • <strong style="color: var(--text-accent);">5 citations</strong></div>
             </div>
         </div>
     </section>
@@ -1567,8 +1576,10 @@
             </div>
 
             <div class="award-card">
-                <div class="award-title">Devpost Hackathon Judge</div>
-                <div class="award-description">Columbia University 2026 Hackathon</div>
+                <a href="https://devfest-2026.devpost.com/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="award-title" style="color: var(--text-accent); cursor: pointer;">Devpost Hackathon Judge</div>
+                </a>
+                <div class="award-description">Columbia University DevFest 2026 Hackathon</div>
             </div>
         </div>
     </section>
@@ -1752,21 +1763,24 @@
             const start = 0;
             const increment = target / (duration / 16);
             let current = start;
+            const hasDollar = element.textContent.includes('$');
 
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= target) {
-                    element.textContent = formatNumber(target);
+                    element.textContent = (hasDollar ? '$' : '') + formatNumber(target);
                     clearInterval(timer);
                 } else {
-                    element.textContent = formatNumber(Math.floor(current));
+                    element.textContent = (hasDollar ? '$' : '') + formatNumber(Math.floor(current));
                 }
             }, 16);
         }
 
         function formatNumber(num) {
             if (num >= 1000000) {
-                return (num / 1000000).toFixed(1) + 'M';
+                const millions = num / 1000000;
+                // Round to whole number if it's a clean value
+                return (millions % 1 === 0 ? millions.toFixed(0) : millions.toFixed(1)) + 'M+';
             } else if (num >= 1000) {
                 return (num / 1000).toFixed(1) + 'K';
             }
@@ -1781,11 +1795,18 @@
                     const statNumbers = entry.target.querySelectorAll('.stat-number');
                     statNumbers.forEach(stat => {
                         const text = stat.textContent;
-                        // Extract numbers for animation (simplified)
+                        // Extract numbers for animation (handle $XXM+ format)
                         if (text.includes('M')) {
-                            const num = parseFloat(text) * 1000000;
-                            stat.textContent = '0';
-                            animateCounter(stat, num);
+                            // Remove $, +, and M, then parse
+                            const cleanText = text.replace(/[\$\+M]/g, '');
+                            const num = parseFloat(cleanText) * 1000000;
+                            if (!isNaN(num)) {
+                                stat.textContent = '$0';
+                                animateCounter(stat, num);
+                            }
+                        } else if (!isNaN(parseInt(text))) {
+                            // For plain numbers like citations and patents, don't animate
+                            // They're already at their final value
                         }
                     });
                 }
