@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahsaas Bajaj - ML Engineer & Researcher</title>
+    <title>Ahsaas Bajaj - ML Engineer & Researcher | Production ML, Personalization & AI</title>
+    <meta name="description" content="Ahsaas Bajaj - Senior ML Engineer at Instacart specializing in large-scale recommendation systems, NLP, and production ML. Inventor of 3 patents with 127+ research citations and $200M+ business impact.">
+    <meta name="keywords" content="machine learning, ML engineer, recommendation systems, NLP, AI, personalization, Instacart, research, patents">
+    <meta name="author" content="Ahsaas Bajaj">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Ahsaas Bajaj - ML Engineer & Researcher">
+    <meta property="og:description" content="Senior ML Engineer specializing in large-scale recommendation systems and production ML">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bajajahsaas.github.io">
+    <meta property="og:image" content="https://bajajahsaas.github.io/headshot.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ahsaas Bajaj - ML Engineer & Researcher">
+    <meta name="twitter:description" content="Senior ML Engineer specializing in large-scale recommendation systems and production ML">
+    <meta name="twitter:image" content="https://bajajahsaas.github.io/headshot.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +36,19 @@
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-accent: #f1f5f9;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-accent: #38bdf8;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
         }
 
         * {
@@ -537,6 +567,281 @@
             }
         }
 
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-accent);
+            color: var(--bg-secondary);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category-icon {
+            font-size: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            color: #1e40af;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid #bfdbfe;
+            transition: all 0.2s ease;
+        }
+
+        [data-theme="dark"] .skill-tag {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #38bdf8;
+            border-color: #475569;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--text-accent);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-company {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-metric {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 0.75rem;
+            background: var(--bg-primary);
+            border-radius: 8px;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-accent);
+            font-family: 'Fraunces', serif;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-description {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--text-accent);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value {
+            color: var(--text-accent);
+            font-size: 0.875rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--text-accent);
+            color: white;
+            border-color: var(--text-accent);
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
@@ -549,12 +854,34 @@
                 font-size: 2.5rem;
             }
 
+            .hero-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .hero-links a {
+                width: 100%;
+                text-align: center;
+            }
+
             .stats-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .nav-links {
-                gap: 1rem;
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .section-title {
@@ -563,6 +890,61 @@
 
             .experience-header {
                 flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-metrics {
+                flex-direction: column;
+            }
+
+            .project-metric {
+                min-width: 100%;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .theme-toggle {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .social-links {
+                gap: 0.5rem;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
             }
         }
     </style>
@@ -573,14 +955,12 @@
             <a href="#"><img src="headshot.png" alt="Ahsaas Bajaj" class="nav-logo"></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#patents">Patents</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#articles">Articles</a></li>
+                <li><a href="#publications">Research</a></li>
                 <li><a href="#speaking">Speaking</a></li>
-                <li><a href="#memberships">Memberships</a></li>
-                <li><a href="#judging">Judging</a></li>
-                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -595,6 +975,7 @@
             </p>
             <div class="hero-links">
                 <a href="mailto:bajajahsaas@gmail.com" class="btn-primary">Get in Touch</a>
+                <a href="https://drive.google.com/file/d/11e5N1GZVyyBRYFHxXWc4tFtpI70BRqlD/view?usp=drivesdk" class="btn-secondary" target="_blank">Download Resume</a>
                 <a href="https://linkedin.com/in/ahsaasbajaj" class="btn-secondary" target="_blank">LinkedIn</a>
                 <a href="https://scholar.google.com/citations?user=RNCwyNUAAAAJ" class="btn-secondary" target="_blank">Scholar</a>
             </div>
@@ -626,17 +1007,308 @@
         <div class="section-header">
             <h2 class="section-title">About</h2>
         </div>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-secondary);">
-            <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">
-                I'm a Senior Machine Learning Engineer at Instacart, where I build large-scale recommendation 
-                systems that process hundreds of millions of orders annually. My work focuses on personalized 
-                ML recommendations, intelligent product substitution algorithms, and technical infrastructure.
+        <div style="max-width: 900px; margin: 0 auto; color: var(--text-secondary);">
+            <p style="margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.8;">
+                I'm a <strong style="color: var(--text-primary);">Senior Machine Learning Engineer II (L6) at Instacart</strong>, where I serve as ML tech lead building large-scale recommendation
+                systems that process hundreds of millions of orders annually. My work has been featured in Instacart's shareholder letters, focusing on personalized
+                ML recommendations that incorporate dietary needs and customer preferences, intelligent product substitution algorithms, and technical infrastructure that
+                drives business impact measured in hundreds of millions of dollars.
             </p>
-            <p style="font-size: 1.125rem;">
-                Previously, I developed on-device AI systems at Samsung R&D and worked on large-scale 
-                personalization at Walmart Labs. I hold an MS in Computer Science from UMass Amherst 
-                and serve as an invited reviewer for top-tier AI venues including AAAI, KDD, and ACL.
+            <p style="margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.8;">
+                With over <strong style="color: var(--text-primary);">8 years of experience</strong> in ML and software engineering, I've delivered production systems
+                at scale across multiple domains. My expertise spans <strong style="color: var(--text-primary);">recommendation systems, NLP, LLMs, production ML infrastructure,
+                and applied research</strong>, with a track record of translating research into measurable business outcomes including $150M+ in retention wins.
             </p>
+            <p style="margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.8;">
+                Previously, I developed <strong style="color: var(--text-primary);">on-device AI systems at Samsung R&D</strong> handling 5M+ daily queries,
+                and built large-scale personalization systems at <strong style="color: var(--text-primary);">Walmart Labs</strong>. I hold an
+                <strong style="color: var(--text-primary);">MS in Computer Science from UMass Amherst</strong>, where I conducted research
+                in NLP and machine learning.
+            </p>
+            <p style="margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.8;">
+                I'm an active contributor to the research community with <strong style="color: var(--text-primary);">127+ citations</strong>,
+                <strong style="color: var(--text-primary);">9 peer-reviewed publications</strong>, and <strong style="color: var(--text-primary);">3 granted/published patents</strong>.
+                I serve as an <strong style="color: var(--text-primary);">invited reviewer for premier AI conferences</strong> including AAAI, KDD (Applied Data Science),
+                ACL, WWW, and UMAP, having served on 10+ technical program committees.
+            </p>
+            <p style="font-size: 1.125rem; line-height: 1.8;">
+                Beyond my work, I'm a member of the <strong style="color: var(--text-primary);">Forbes Technology Council</strong> and
+                <strong style="color: var(--text-primary);">International Academy of Digital Arts & Sciences</strong>. I regularly speak at
+                industry conferences and events about production ML systems, personalization, and applied AI at scale.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <h2 class="section-title">Skills & Expertise</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">🤖</span>
+                    Machine Learning & AI
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">XGBoost</span>
+                    <span class="skill-tag">LightGBM</span>
+                    <span class="skill-tag">Hugging Face</span>
+                    <span class="skill-tag">LLMs</span>
+                    <span class="skill-tag">BERT</span>
+                    <span class="skill-tag">Transformers</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">💻</span>
+                    Programming & Development
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">gRPC</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">☁️</span>
+                    Cloud & Infrastructure
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">GCP</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Airflow</span>
+                    <span class="skill-tag">MLflow</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">🎯</span>
+                    Specializations
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Recommendation Systems</span>
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">Personalization</span>
+                    <span class="skill-tag">Ranking Algorithms</span>
+                    <span class="skill-tag">A/B Testing</span>
+                    <span class="skill-tag">Experimentation</span>
+                    <span class="skill-tag">Production ML</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">🗄️</span>
+                    Data & Databases
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Elasticsearch</span>
+                    <span class="skill-tag">Spark</span>
+                    <span class="skill-tag">Hive</span>
+                    <span class="skill-tag">DynamoDB</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <span class="skill-category-icon">📊</span>
+                    Research & Analysis
+                </h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Statistical Analysis</span>
+                    <span class="skill-tag">Experimental Design</span>
+                    <span class="skill-tag">Research Publications</span>
+                    <span class="skill-tag">Peer Review</span>
+                    <span class="skill-tag">Technical Writing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <h2 class="section-title">Key Projects & Impact</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Personalized Replacements ML System</h3>
+                    <div class="project-company">Instacart</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        ML tech lead for product substitutions featured in Instacart's shareholder letters (Q2 2025, Q4 2024).
+                        Built personalized replacement models incorporating dietary needs and past preferences, processing 300M+ annual requests.
+                        Reduced poor replacements by ~30% through training on 10X more data and leveraging LLMs for richer signals.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
+                            <div class="metric-value">$150M+</div>
+                            <div class="metric-label">Retention Wins (2024)</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">$202M+</div>
+                            <div class="metric-label">GTV Influenced</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">~30%</div>
+                            <div class="metric-label">Reduction in Poor Replacements</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">300M+</div>
+                            <div class="metric-label">Annual ML Requests</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">LLMs</span>
+                        <span class="tech-tag">AWS SageMaker</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">MLflow</span>
+                        <span class="tech-tag">A/B Testing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">On-Device Unified Search Engine</h3>
+                    <div class="project-company">Samsung R&D</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Commercialized intelligent on-device search engine using semantic matching and query expansion,
+                        handling millions of daily queries across Samsung mobile devices worldwide.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
+                            <div class="metric-value">5M</div>
+                            <div class="metric-label">Daily Queries</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">40x</div>
+                            <div class="metric-label">Performance Gain</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">+25%</div>
+                            <div class="metric-label">Recall Improvement</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">FlatBuffers</span>
+                        <span class="tech-tag">Information Retrieval</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">BERT-based Entity Recognition</h3>
+                    <div class="project-company">Instabase</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Delivered production NLP system for entity extraction and Table QA using BERT models,
+                        deployed via GRPC and Kubernetes for high-throughput document processing.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
+                            <div class="metric-value">+17%</div>
+                            <div class="metric-label">Recall Improvement</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">Production</div>
+                            <div class="metric-label">Deployment Status</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">gRPC</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">NER</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Affinity & Repurchase Intent System</h3>
+                    <div class="project-company">Walmart Labs</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Built large-scale recommendation system with real-time affinity modeling for Walmart grocery,
+                        powering personalized experiences for millions of customers. Granted US Patent.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
+                            <div class="metric-value">+1%</div>
+                            <div class="metric-label">Basket Prediction</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">Patent</div>
+                            <div class="metric-label">US12406282B2</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Spark</span>
+                        <span class="tech-tag">Recommendation Systems</span>
+                        <span class="tech-tag">Real-time ML</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Abstractive Summarization for Legal & Financial Documents</h3>
+                    <div class="project-company">Goldman Sachs × UMass Amherst</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Industrial research project in collaboration with Goldman Sachs and UMass Amherst's Information Extraction and Synthesis Laboratory (IESL).
+                        Built scalable abstractive summarization models that preserve critical facts in legal and financial documents using pre-trained language models.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
+                            <div class="metric-value">4</div>
+                            <div class="metric-label">Research Scientists</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">Novel</div>
+                            <div class="metric-label">Sentence Classifier</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">Abstractive Summarization</span>
+                        <span class="tech-tag">Pre-trained LMs</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -648,16 +1320,45 @@
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <h3 class="experience-title">Senior Machine Learning Engineer II</h3>
+                        <h3 class="experience-title">Senior Machine Learning Engineer II (L6)</h3>
                         <div class="experience-company">Instacart - Content AI Team</div>
                     </div>
-                    <div class="experience-date">Apr 2022 – Present</div>
+                    <div class="experience-date">Mar 2025 – Present</div>
                 </div>
                 <ul class="experience-highlights">
-                    <li>Delivered $17.3M+ in incremental contribution profit and influenced $202M+ in GTV through personalized replacements ML systems</li>
-                    <li>Drove +0.32pp improvement in Good Fill Rate and 24% reduction in disapproved replacements</li>
-                    <li>Architected production ML platform supporting 300M+ annual requests with 95%+ satisfaction</li>
-                    <li>Served as de facto technical lead, defining roadmap and experimentation standards</li>
+                    <li>ML tech lead for product substitutions - Featured in Instacart's Q2 2025 Shareholder Letter: "launched a new personalized replacement model that incorporates dietary needs and past preferences to deliver more accurate suggestions and further improve satisfaction rates"</li>
+                    <li>Enhanced model boosting "perfect order fill rate" through advanced personalization incorporating dietary needs and customer preferences</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Senior Machine Learning Engineer (L5)</h3>
+                        <div class="experience-company">Instacart - Content AI Team</div>
+                    </div>
+                    <div class="experience-date">Sep 2023 - Mar 2025</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>ML lead for product substitutions - Reduced poor replacements by ~30%, translating to ~$150M in retention wins in 2024 (achieving over half of the company's target in good fill rate)</li>
+                    <li>Featured in Instacart's Q4 2024 shareholder letter: "upgraded ML-powered item replacement model. Training on 10X more data and using large language models for richer signals led to higher customer retention"</li>
+                    <li>Delivered $17.3M+ in incremental contribution profit and influenced $202M+ in GTV through personalized replacements</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Machine Learning Engineer II (L4)</h3>
+                        <div class="experience-company">Instacart - Content AI Team</div>
+                    </div>
+                    <div class="experience-date">Apr 2022 - Sep 2023</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Led development of replacement/substitution product recommendation system powering Instacart app, Shopper app, and Ads surfaces</li>
+                    <li>Architected production ML platform supporting 300M+ annual requests with 95%+ satisfaction rate</li>
+                    <li>Tech stack: AWS SageMaker, MLflow, TensorFlow, Airflow, Snowflake, SQL, Docker, AWS ECS, Twirp RPC</li>
+                    <li>Granted US Patent for recommendation systems innovation</li>
                 </ul>
             </div>
 
@@ -665,14 +1366,15 @@
                 <div class="experience-header">
                     <div>
                         <h3 class="experience-title">Data Scientist</h3>
-                        <div class="experience-company">Walmart Labs - Personalization Team</div>
+                        <div class="experience-company">Walmart Global Tech - Search & Personalization Team</div>
                     </div>
                     <div class="experience-date">Feb 2021 - Apr 2022</div>
                 </div>
                 <ul class="experience-highlights">
-                    <li>Built large-scale recommendation systems to power Walmart grocery experience</li>
-                    <li>Led efforts on customer repurchase journey and improved diversity in recommendations</li>
-                    <li>Achieved 1% improvement in basket predictions through affinity modeling</li>
+                    <li>Built large-scale recommendation systems to power Walmart Grocery Experience for millions of customers</li>
+                    <li>Led efforts on customer's repurchase journey and product type affinities modeling</li>
+                    <li>Achieved 1% improvement in basket predictions through advanced affinity modeling - Granted US Patent</li>
+                    <li>Tech stack: PySpark, Hive, Scala, SQL, Hadoop, Google Cloud Platform</li>
                 </ul>
             </div>
 
@@ -685,9 +1387,11 @@
                     <div class="experience-date">May 2020 - Aug 2020</div>
                 </div>
                 <ul class="experience-highlights">
-                    <li>Delivered BERT-based entity recognition and Table QA in production using GRPC & Kubernetes</li>
-                    <li>Improved recall by 17% for extraction from W2 forms and resumes</li>
-                    <li>Developed NLP framework for model training, fine-tuning, and evaluation</li>
+                    <li>Applied ML and NLP techniques for document understanding (structured, unstructured data)</li>
+                    <li>Improved recall by 17% for extraction of person & company names from client datasets of W2 forms and resumes</li>
+                    <li>Delivered BERT-based entity recognition and Table Question Answering in production using GRPC & Kubernetes</li>
+                    <li>Developed NLP framework to run on company infrastructure that allows model training, fine-tuning & evaluation</li>
+                    <li>Incorporated use-cases like NER (structured data) and Question-Answering (natural language data) for real-world datasets</li>
                 </ul>
             </div>
 
@@ -697,12 +1401,61 @@
                         <h3 class="experience-title">Senior Software Engineer</h3>
                         <div class="experience-company">Samsung R&D Institute - on-Device AI Team</div>
                     </div>
-                    <div class="experience-date">Jul 2017 - Jul 2019</div>
+                    <div class="experience-date">Mar 2019 - Aug 2019</div>
                 </div>
                 <ul class="experience-highlights">
-                    <li>Commercialized on-device unified search engine handling 5M daily queries</li>
-                    <li>Improved first search performance by 40x using design patterns and Flatbuffers</li>
-                    <li>Increased recall by 25% using Rocchio query expansion and semantic matching</li>
+                    <li>Worked on Bixby Search project (on-device intelligent search engine) for Samsung devices</li>
+                    <li>Implemented state-of-the-art information retrieval techniques like personalized ranking, semantic search, and application embeddings</li>
+                    <li>Authored two research papers on Mobile App Embeddings (NLP, Information Retrieval) published at CICLing 2019 and NLDB 2019</li>
+                    <li>Specialized in Information Retrieval and Natural Language Processing for mobile search</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Software Engineer</h3>
+                        <div class="experience-company">Samsung R&D Institute - on-Device AI Team</div>
+                    </div>
+                    <div class="experience-date">Jul 2017 - Feb 2019</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Built AI-powered on-device search engine commercialized across Samsung devices, handling 5M daily queries</li>
+                    <li>Implemented new architecture achieving speed-up in indexing and querying performance</li>
+                    <li>Revamped Directory Trie from scratch using serialization library to improve first query time by 40x</li>
+                    <li>Increased recall by 25% using Rocchio query expansion and semantic matching techniques</li>
+                    <li>Authored research paper on Learning-to-Rank method accepted at ACM CoDS-COMAD 2019</li>
+                    <li>Delivered multiple Proof of Concepts: personalized ranking, query expansion, and related search</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Graduate Student Researcher</h3>
+                        <div class="experience-company">UMass Amherst - NGRAM NLP Lab (Prof. Mohit Iyyer)</div>
+                    </div>
+                    <div class="experience-date">Jan 2020 - May 2020</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Conducted research on "Probing Language Models for Long-term Dependencies"</li>
+                    <li>Investigated the use of long-term context in large-scale pretrained language models like Transformer-XL and BERT</li>
+                    <li>Designed probe tasks and evaluation metrics to quantify the use of context by models in incremental cloze task</li>
+                    <li>Analyzed the varying use of context for different word types (content vs function words, frequent vs infrequent words)</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Graduate Student Researcher</h3>
+                        <div class="experience-company">Isenberg School of Management - UMass Amherst</div>
+                    </div>
+                    <div class="experience-date">Sep 2019 - May 2020</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Conducted financial data analysis research using Machine Learning with Prof. Anurag Sharma</li>
+                    <li>Developed ML models for quantitative financial analysis and investment strategies</li>
                 </ul>
             </div>
         </div>
@@ -714,38 +1467,50 @@
         </div>
         <div class="patents-list">
             <div class="patent-card">
-                <h3 class="patent-title">Systems and methods for altering a GUI based on affinity and repurchase intent</h3>
+                <a href="https://patents.google.com/patent/US12406282B2/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <h3 class="patent-title" style="color: var(--text-accent); cursor: pointer;">Systems and methods for altering a GUI based on affinity and repurchase intent</h3>
+                </a>
                 <div class="patent-meta">
                     <span class="patent-status">Granted - US</span>
                     <span style="color: var(--text-secondary);">Walmart Apollo, LLC</span>
                 </div>
                 <p class="patent-description">
-                    Describes systems that infer real-time user affinity and repurchase intent from in-session 
+                    Describes systems that infer real-time user affinity and repurchase intent from in-session
                     behavior and dynamically adapt GUI elements to improve relevance, engagement, and conversion.
+                    <br><br>
+                    <strong style="color: var(--text-accent);">🏆 Industry Impact:</strong> Cited by Pinterest, Inc. and University of Texas in recommendation systems research.
                 </p>
             </div>
 
             <div class="patent-card">
-                <h3 class="patent-title">Generating item replacements using ML-based language models</h3>
+                <a href="https://patents.google.com/patent/US20240362696A1/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <h3 class="patent-title" style="color: var(--text-accent); cursor: pointer;">Generating item replacements using ML-based language models</h3>
+                </a>
                 <div class="patent-meta">
                     <span class="patent-status">Published - US</span>
                     <span style="color: var(--text-secondary);">Maplebear Inc. (Instacart)</span>
                 </div>
                 <p class="patent-description">
-                    Describes LLM-based systems that generate product replacements, evaluate replacement quality, 
+                    Describes LLM-based systems that generate product replacements, evaluate replacement quality,
                     and produce natural-language explanations for low-quality substitutions.
+                    <br><br>
+                    <strong style="color: var(--text-accent);">🏆 Industry Impact:</strong> Cited by Capital One Services, LLC (Fortune 100 company) in ML patent applications.
                 </p>
             </div>
 
             <div class="patent-card">
-                <h3 class="patent-title">Selecting replacement items based on ML predictions</h3>
+                <a href="https://patents.google.com/patent/US20250265628A1/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <h3 class="patent-title" style="color: var(--text-accent); cursor: pointer;">Selecting replacement items based on ML predictions</h3>
+                </a>
                 <div class="patent-meta">
                     <span class="patent-status">Published - US</span>
                     <span style="color: var(--text-secondary);">Maplebear Inc. (Instacart)</span>
                 </div>
                 <p class="patent-description">
-                    Describes predictive ML systems that rank and select replacement items using weighted 
+                    Describes predictive ML systems that rank and select replacement items using weighted
                     probabilities of positive and negative fulfillment outcomes.
+                    <br><br>
+                    <strong style="color: var(--text-accent);">🏆 Industry Impact:</strong> Recently published (2025) - powering production ML systems at scale.
                 </p>
             </div>
         </div>
@@ -764,9 +1529,10 @@
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">Long Document Summarization in a Low Resource Setting using Pretrained Language Models</div>
                 </a>
                 <div class="publication-authors">Ahsaas Bajaj, Pavitra Dangati, Kalpesh Krishna, et al.</div>
-                <div class="publication-venue">ACL-IJCNLP 2021</div>
-                <div style="margin-top: 0.5rem;">
-                    <a href="https://aclanthology.org/2021.acl-srw.7.mp4" target="_blank" style="color: var(--text-accent); text-decoration: none; font-size: 0.875rem; font-weight: 500;">📹 Video</a>
+                <div class="publication-venue">ACL-IJCNLP 2021 • <strong style="color: var(--text-accent);">83 citations</strong></div>
+                <div style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                    <a href="https://aclanthology.org/2021.acl-srw.7.mp4" target="_blank" style="color: var(--text-accent); text-decoration: none; font-weight: 500;">📹 Video</a> •
+                    <strong style="color: var(--text-accent);">🏆 Research Impact:</strong> Cited by Google Research (NeurIPS 2023), top venues including AAAI, ACL Anthology, ACM Computing Surveys, and Springer journals.
                 </div>
             </div>
 
@@ -775,7 +1541,7 @@
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">An Instance Level Approach for Shallow Semantic Parsing in Scientific Procedural Text</div>
                 </a>
                 <div class="publication-authors">Daivik Swarup, Ahsaas Bajaj, Rajarshi Das, Andrew McCallum, et al.</div>
-                <div class="publication-venue">Findings of EMNLP 2020</div>
+                <div class="publication-venue">Findings of EMNLP 2020 • <strong style="color: var(--text-accent);">5 citations</strong></div>
                 <div style="margin-top: 0.5rem;">
                     <a href="https://slideslive.com/38940651" target="_blank" style="color: var(--text-accent); text-decoration: none; font-size: 0.875rem; font-weight: 500;">📹 Video</a>
                 </div>
@@ -786,7 +1552,7 @@
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">Learning Mobile App Embeddings using Multi-task Neural Networks</div>
                 </a>
                 <div class="publication-authors">Ahsaas Bajaj, Shubham Krishna, et al.</div>
-                <div class="publication-venue">Springer NLDB 2019</div>
+                <div class="publication-venue">Springer NLDB 2019 • <strong style="color: var(--text-accent);">1 citation</strong></div>
             </div>
 
             <div class="publication-card">
@@ -794,15 +1560,15 @@
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">RelEmb: A relevance-based application embedding for mobile app retrieval</div>
                 </a>
                 <div class="publication-authors">Ahsaas Bajaj, Shubham Krishna, et al.</div>
-                <div class="publication-venue">CICLing 2019</div>
+                <div class="publication-venue">CICLing 2019 • <strong style="color: var(--text-accent);">7 citations</strong></div>
             </div>
 
             <div class="publication-card">
-                <a href="https://dl.acm.org/doi/10.1145/3297001.3297017" target="_blank" style="text-decoration: none; color: inherit;">
+                <a href="https://dl.acm.org/doi/abs/10.1145/3297001.3297010" target="_blank" style="text-decoration: none; color: inherit;">
                     <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">Enhanced Learning to Rank using Cluster-loss Adjustment</div>
                 </a>
                 <div class="publication-authors">Ahsaas Bajaj, Hemant Tiwari, Vanraj Vala</div>
-                <div class="publication-venue">ACM CODS-COMAD 2019</div>
+                <div class="publication-venue">ACM CODS-COMAD 2019 • <strong style="color: var(--text-accent);">5 citations</strong></div>
             </div>
         </div>
     </section>
@@ -819,6 +1585,14 @@
                 <div class="publication-authors">Ahsaas Bajaj</div>
                 <div class="publication-venue">Instacart Tech Blog</div>
             </div>
+
+            <div class="publication-card">
+                <a href="https://open.substack.com/pub/datatinkerer/p/how-to-build-a-recommendation-system-at-scale" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="publication-title" style="color: var(--text-accent); cursor: pointer;">How to Build a Recommendation System at Scale</div>
+                </a>
+                <div class="publication-authors">Ahsaas Bajaj</div>
+                <div class="publication-venue">Data Tinkerer</div>
+            </div>
         </div>
     </section>
 
@@ -828,19 +1602,27 @@
         </div>
         <div class="speaking-grid">
             <div class="speaking-card">
-                <div class="speaking-event">Cohere Labs - ML Industry Perspectives</div>
+                <a href="https://cohere.com/events/cohere-labs-ahsaas-bajaj-2026" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="speaking-event" style="color: var(--text-accent); cursor: pointer;">Cohere Labs - ML Industry Perspectives</div>
+                </a>
                 <div class="speaking-topic">Production-grade ML systems and real-world recommendation challenges</div>
+                <div class="speaking-topic" style="margin-top: 0.5rem;">
+                    <a href="https://www.youtube.com/watch?v=UkOvqHSskMw" target="_blank" style="color: var(--text-accent); text-decoration: none;">Watch Talk →</a>
+                </div>
                 <div class="speaking-date">January 2026</div>
             </div>
 
             <div class="speaking-card">
                 <div class="speaking-event">Data Science Salon - DSS Break</div>
                 <div class="speaking-topic">Applied ML, system design, and evaluation practices in industry</div>
+                <div class="speaking-topic" style="margin-top: 0.5rem;">
+                    <a href="https://www.linkedin.com/video/event/urn:li:ugcPost:7423015977086484480" target="_blank" style="color: var(--text-accent); text-decoration: none;">Watch Talk →</a>
+                </div>
                 <div class="speaking-date">February 2026</div>
             </div>
             <div class="speaking-card">
                 <div class="speaking-event">Louisville AI Week</div>
-                <div class="speaking-topic">Large-scale recommendation systems and applied ML and lessons from production deployments</div>
+                <div class="speaking-topic">Featured Speaker & Panelist - Large-scale recommendation systems, applied ML lessons from production deployments, and fireside chat on AI in e-commerce</div>
                 <div class="speaking-date">February 2026</div>
             </div>
             <div class="speaking-card">
@@ -854,6 +1636,31 @@
                 <div class="speaking-topic">Applied ML: quality, evaluation, and business impact at scale</div>
                 <div class="speaking-date">April 2026 - Seattle</div>
             </div>
+
+            <div class="speaking-card">
+                <div class="speaking-event">The Data Science Conference (TDSC)</div>
+                <div class="speaking-topic">Backup Speaker - Production ML systems and real-world applications</div>
+                <div class="speaking-date">May 28-29, 2026 - Chicago</div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="speaking-event">Enhanced Learning to Rank using Cluster-loss Adjustment</div>
+                <div class="speaking-topic">Research presentation on novel learning-to-rank techniques with cluster-based loss adjustment for improved ranking performance</div>
+                <div class="speaking-topic" style="margin-top: 0.5rem;">
+                    <a href="https://youtu.be/JjylgCbeMGs?si=bGEy-Xtc7NCxRyN2&t=2055" target="_blank" style="color: var(--text-accent); text-decoration: none;">Watch Talk →</a> •
+                    <a href="https://drive.google.com/file/d/1U9dOBeBLKqhgbpVU_2_IFbJhjK417hY0/view?usp=drivesdk" target="_blank" style="color: var(--text-accent); text-decoration: none;">View Slides →</a>
+                </div>
+                <div class="speaking-date">January 2019 - Kolkata, India</div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="speaking-event">Learning Mobile App Embeddings using Multi-task Neural Networks</div>
+                <div class="speaking-topic">Research presentation on multi-task neural network approaches for learning mobile app embeddings</div>
+                <div class="speaking-topic" style="margin-top: 0.5rem;">
+                    <a href="https://drive.google.com/file/d/1XW9ebySjoNjKAW2n444bYFMxTQlDbpjU/view?usp=drivesdk" target="_blank" style="color: var(--text-accent); text-decoration: none;">View Slides →</a>
+                </div>
+                <div class="speaking-date">June 2019 - Manchester, UK</div>
+            </div>
         </div>
     </section>
 
@@ -863,13 +1670,24 @@
         </div>
         <div class="awards-grid">
             <div class="award-card">
-                <div class="award-title">International Academy of Digital Arts & Sciences Member</div>
+                <a href="https://www.iadas.net/membership/bio/ahsaas-bajaj/24245" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="award-title" style="color: var(--text-accent); cursor: pointer;">International Academy of Digital Arts & Sciences Member</div>
+                </a>
                 <div class="award-description">Associate Academy Member of IADAS, serving as a judge for honoring excellence on the Internet</div>
             </div>
 
             <div class="award-card">
-                <div class="award-title">Forbes Technology Council Member</div>
+                <a href="https://councils.forbes.com/profile/Ahsaas-Bajaj-Senior-Machine-Learning-Engineer-II-Instacart/8b495b21-87e6-47c2-837c-7a7405645aa6" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="award-title" style="color: var(--text-accent); cursor: pointer;">Forbes Technology Council Member</div>
+                </a>
                 <div class="award-description">Invitation-only membership (10-11% acceptance rate) recognizing senior technology leaders</div>
+            </div>
+
+            <div class="award-card">
+                <a href="https://dscnextconference.com/team/ahsaas-bajaj/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="award-title" style="color: var(--text-accent); cursor: pointer;">DSCNext Expert Committee Member</div>
+                </a>
+                <div class="award-description">Expert committee member for DSCNext Conference, providing guidance on data science and AI topics</div>
             </div>
         </div>
     </section>
@@ -880,13 +1698,49 @@
         </div>
         <div class="awards-grid">
             <div class="award-card">
-                <div class="award-title">Editorial Reviewing Service</div>
-                <div class="award-description">Program Committee & Invited Reviewer (2022–Present) • Served on 10+ technical program committees and review boards for premier AI conferences including AAAI, KDD (Applied Data Science), UMAP, WWW (LARS Workshop), ACL (Rolling Review, SRW, ECNLP), NLDB, and ICASS • Evaluated research on LLMs, personalization, and applied ML</div>
+                <div class="award-title">Academic Peer Reviewing & Program Committees</div>
+                <div class="award-description">
+                    <strong>Program Committee & Invited Reviewer (2022–Present)</strong><br><br>
+                    Served on 12+ technical program committees and review boards for premier AI and data science conferences:<br><br>
+                    <strong>Core ML & AI:</strong> AAAI, KDD (Applied Data Science), UMAP, WWW (LARS Workshop), IEEE BigDataService 2026, ICAIIC (International Conference on Artificial Intelligence and Intelligent Computing)<br><br>
+                    <strong>NLP & Language:</strong> ACL (Rolling Review, SRW, ECNLP), NLDB<br><br>
+                    <strong>Systems & Applications:</strong> ICASS<br><br>
+                    Evaluated cutting-edge research on LLMs, recommendation systems, personalization algorithms, and applied ML at scale.
+                </div>
             </div>
 
             <div class="award-card">
-                <div class="award-title">Devpost Hackathon Judge</div>
-                <div class="award-description">Columbia University 2026 Hackathon</div>
+                <div class="award-title">Webby Awards Judge</div>
+                <div class="award-description">Official judge for the Webby Awards as an International Academy of Digital Arts & Sciences (IADAS) member, evaluating excellence in digital innovation and web-based projects</div>
+            </div>
+
+            <div class="award-card">
+                <a href="https://devfest-2026.devpost.com/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="award-title" style="color: var(--text-accent); cursor: pointer;">Devpost Hackathon Judge</div>
+                </a>
+                <div class="award-description">Columbia University DevFest 2026 Hackathon</div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">LIVE AI Ivy Plus 2026 Judge</div>
+                <div class="award-description">Onsite judge for LIVE AI talent identification program, evaluating AI hackathon participants from Ivy Plus universities. Judging on Sunday, February 22, 2026 in New York City and online February 22 - March 8, 2026</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advisory">
+        <div class="section-header">
+            <h2 class="section-title">Technical Advisory</h2>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-title">Technical Advisor - Bhasha Tech</div>
+                <div class="award-description">
+                    Providing strategic technical advisory for Bhasha Tech, an AI-powered English learning application with 50K+ users across 130+ countries.
+                    Advising on agentic AI recommendation systems for personalized learning, ML-driven content personalization, and scalable infrastructure
+                    for language learning applications. Collaborating with founding team to architect next-generation recommendation engines
+                    leveraging large-scale personalization techniques from production ML systems.
+                </div>
             </div>
         </div>
     </section>
@@ -923,6 +1777,51 @@
         </div>
     </section>
 
+    <section id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Let's Connect</h2>
+        </div>
+        <div class="contact-container">
+            <p class="contact-description">
+                I'm always interested in discussing ML challenges, research collaborations, speaking opportunities,
+                or just connecting with fellow ML practitioners. Feel free to reach out!
+            </p>
+            <div class="contact-methods">
+                <a href="mailto:bajajahsaas@gmail.com" class="contact-method">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">bajajahsaas@gmail.com</div>
+                </a>
+                <a href="https://linkedin.com/in/ahsaasbajaj" target="_blank" class="contact-method">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">Connect with me</div>
+                </a>
+                <a href="https://scholar.google.com/citations?user=RNCwyNUAAAAJ" target="_blank" class="contact-method">
+                    <div class="contact-icon">🎓</div>
+                    <div class="contact-label">Google Scholar</div>
+                    <div class="contact-value">View Research</div>
+                </a>
+                <a href="https://github.com/bajajahsaas" target="_blank" class="contact-method">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-label">GitHub</div>
+                    <div class="contact-value">View Code</div>
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/ahsaasbajaj" target="_blank" class="social-link" title="LinkedIn">in</a>
+                <a href="https://github.com/bajajahsaas" target="_blank" class="social-link" title="GitHub">gh</a>
+                <a href="https://scholar.google.com/citations?user=RNCwyNUAAAAJ" target="_blank" class="social-link" title="Google Scholar">📚</a>
+                <a href="https://twitter.com/ahsaasbajaj" target="_blank" class="social-link" title="Twitter">𝕏</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        🌙
+    </button>
+
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -937,6 +1836,28 @@
     </footer>
 
     <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        updateThemeIcon(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -960,6 +1881,86 @@
                 }
             });
         });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for fade-in animation
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('fade-in-section');
+            observer.observe(section);
+        });
+
+        // Animated counter for stats
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            const hasDollar = element.textContent.includes('$');
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = (hasDollar ? '$' : '') + formatNumber(target);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = (hasDollar ? '$' : '') + formatNumber(Math.floor(current));
+                }
+            }, 16);
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                const millions = num / 1000000;
+                // Round to whole number if it's a clean value
+                return (millions % 1 === 0 ? millions.toFixed(0) : millions.toFixed(1)) + 'M+';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num.toString();
+        }
+
+        // Trigger counter animation when stats are visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        // Extract numbers for animation (handle $XXM+ format)
+                        if (text.includes('M')) {
+                            // Remove $, +, and M, then parse
+                            const cleanText = text.replace(/[\$\+M]/g, '');
+                            const num = parseFloat(cleanText) * 1000000;
+                            if (!isNaN(num)) {
+                                stat.textContent = '$0';
+                                animateCounter(stat, num);
+                            }
+                        } else if (!isNaN(parseInt(text))) {
+                            // For plain numbers like citations and patents, don't animate
+                            // They're already at their final value
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsGrid = document.querySelector('.stats-grid');
+        if (statsGrid) {
+            statsObserver.observe(statsGrid);
+        }
     </script>
 </body>
 </html>
