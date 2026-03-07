@@ -1274,219 +1274,245 @@
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">Personalized Replacements ML System</h3>
-                    <div class="project-company">Instacart</div>
+                    <h3 class="project-title">Intelligent Product Replacement System</h3>
+                    <div class="project-company">Instacart (Maplebear Inc.) · 2022–Present</div>
                 </div>
                 <div class="project-content">
                     <p class="project-description">
-                        ML tech lead for product substitutions featured in Instacart's shareholder letters (Q2 2025, Q4 2024).
-                        Built personalized replacement models incorporating dietary needs and past preferences, processing 300M+ annual requests.
-                        Reduced poor replacements by ~30% through training on 10X more data and leveraging LLMs for richer signals.
+                        Sole ML engineer and de facto technical lead for Instacart's business-critical substitution ranking system, evolved through four major architectural phases: multi-stage retrieval + deep ranking, explicit negative event modeling, personalized multi-surface ranking with surface-specific objectives, and a real-time serving re-architecture on MSP achieving ~11ms p99 latency. LLM-curated denylists and semantic retriever integration (ESCI) eliminated worst-case failures. Work cited in Q2 & Q4 2025 and Q4 2024 Instacart Shareholder Letters. Individual Tech Achievement Award, Q4 2024.
                     </p>
                     <div class="project-metrics">
                         <div class="project-metric">
-                            <div class="metric-value">$150M+</div>
-                            <div class="metric-label">Retention Wins (2024)</div>
+                            <div class="metric-value">$25.5M+</div>
+                            <div class="metric-label">Cumulative Contribution Profit</div>
                         </div>
                         <div class="project-metric">
                             <div class="metric-value">$202M+</div>
-                            <div class="metric-label">GTV Influenced</div>
+                            <div class="metric-label">Influenced GTV</div>
                         </div>
                         <div class="project-metric">
-                            <div class="metric-value">~30%</div>
-                            <div class="metric-label">Reduction in Poor Replacements</div>
+                            <div class="metric-value">78%→82%</div>
+                            <div class="metric-label">ML Recommendation Conversion</div>
                         </div>
                         <div class="project-metric">
                             <div class="metric-value">300M+</div>
-                            <div class="metric-label">Annual ML Requests</div>
+                            <div class="metric-label">Annual Requests · &lt;100ms p99</div>
                         </div>
                     </div>
                     <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">Personalization</span>
+                        <span class="tech-tag">Retrieval + Ranking</span>
+                        <span class="tech-tag">Negative Event Modeling</span>
                         <span class="tech-tag">LLMs</span>
-                        <span class="tech-tag">AWS SageMaker</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">MLflow</span>
-                        <span class="tech-tag">A/B Testing</span>
+                        <span class="tech-tag">Feature Store v2</span>
+                        <span class="tech-tag">Real-time Serving</span>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">On-Device Unified Search Engine</h3>
-                    <div class="project-company">Samsung R&D</div>
+                    <h3 class="project-title">AIQA — LLM-Based Evaluation Framework & Cross-Domain ML Platform</h3>
+                    <div class="project-company">Instacart · 2023–Present</div>
                 </div>
                 <div class="project-content">
                     <p class="project-description">
-                        Commercialized intelligent on-device search engine using semantic matching and query expansion,
-                        handling millions of daily queries across Samsung mobile devices worldwide.
+                        Pioneered AIQA (AI Quality Assurance), an LLM-based semantic evaluation pipeline achieving 82% human-annotator agreement — replacing expensive manual annotation cycles with continuous quality monitoring. Reduced egregious replacement impressions from 4% to 2% via proactive LLM failure detection (patent filed). Extended the replacements ML platform to adjacent domains: wrong-item reconciliation ($1.25M CP, 1 month ahead of schedule), trending products ($10M iGTV for early/new users), and Item Details related-item carousels (+5.8% and +16.5% cart-adds). Two additional patents filed from cross-domain work.
                     </p>
                     <div class="project-metrics">
                         <div class="project-metric">
-                            <div class="metric-value">5M</div>
-                            <div class="metric-label">Daily Queries</div>
+                            <div class="metric-value">82%</div>
+                            <div class="metric-label">LLM–Human Agreement</div>
                         </div>
                         <div class="project-metric">
+                            <div class="metric-value">$250K+</div>
+                            <div class="metric-label">Evaluation Cost Savings</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">$10M</div>
+                            <div class="metric-label">iGTV (Trending Products)</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">$1.25M</div>
+                            <div class="metric-label">CP (Wrong-Item Reconciliation)</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">LLM Evaluation</span>
+                        <span class="tech-tag">Observability</span>
+                        <span class="tech-tag">Arize</span>
+                        <span class="tech-tag">SHAP</span>
+                        <span class="tech-tag">Collaborative Filtering</span>
+                        <span class="tech-tag">Multi-surface ML</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">On-Device Unified Search & Personalized Ranking</h3>
+                    <div class="project-company">Samsung R&D Institute · Galaxy S10+</div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Founding member of Samsung's on-device AI team. Designed a FlatBuffers-based serialization architecture for dictionary tries that cut first-query latency 40x (2s → 50ms). Implemented Rocchio query expansion and TF-IDF semantic matching for a 25% recall lift. Built on-device LTR models (RankSVM, LambdaMART with cluster-based loss augmentation) reused for Bixby card and notification ranking. Shipped on Galaxy S10 and subsequent flagships (~5M queries/day). Published 4 peer-reviewed papers (CoDS-COMAD, NLDB, CICLing 2019).
+                    </p>
+                    <div class="project-metrics">
+                        <div class="project-metric">
                             <div class="metric-value">40x</div>
-                            <div class="metric-label">Performance Gain</div>
+                            <div class="metric-label">Cold-Start Speedup</div>
                         </div>
                         <div class="project-metric">
                             <div class="metric-value">+25%</div>
                             <div class="metric-label">Recall Improvement</div>
                         </div>
+                        <div class="project-metric">
+                            <div class="metric-value">5M</div>
+                            <div class="metric-label">Daily Queries</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">4</div>
+                            <div class="metric-label">Peer-Reviewed Papers</div>
+                        </div>
                     </div>
                     <div class="project-tech">
                         <span class="tech-tag">C++</span>
                         <span class="tech-tag">Java</span>
-                        <span class="tech-tag">NLP</span>
                         <span class="tech-tag">FlatBuffers</span>
-                        <span class="tech-tag">Information Retrieval</span>
+                        <span class="tech-tag">Learning-to-Rank</span>
+                        <span class="tech-tag">Query Expansion</span>
+                        <span class="tech-tag">On-Device ML</span>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">BERT-based Entity Recognition</h3>
-                    <div class="project-company">Instabase</div>
+                    <h3 class="project-title">BERT Document AI — NER & Oracle QA System</h3>
+                    <div class="project-company">Instabase · IBHack 2020 2nd Prize</div>
                 </div>
                 <div class="project-content">
                     <p class="project-description">
-                        Delivered production NLP system for entity extraction and Table QA using BERT models,
-                        deployed via GRPC and Kubernetes for high-throughput document processing.
+                        Fine-tuned bert-large-cased for multi-class sequence classification on structured document data (W-2s, resumes, legal filings), achieving 37–52% F1 improvement over all baselines — including spaCy which scored &lt;1% F1 on form-styled data. Built a pixel-wise spatial clustering pipeline to generate candidates from OCR output. Also co-developed <em>Oracle</em>, a two-stage retrieval + BERT QA system for unstructured legal documents (certificates of incorporation, ISDA agreements), winning 2nd Prize at IBHack 2020 — an early implementation of what is now called RAG.
                     </p>
                     <div class="project-metrics">
                         <div class="project-metric">
-                            <div class="metric-value">+17%</div>
-                            <div class="metric-label">Recall Improvement</div>
+                            <div class="metric-value">+52%</div>
+                            <div class="metric-label">F1 on Resumes</div>
                         </div>
                         <div class="project-metric">
-                            <div class="metric-value">Production</div>
-                            <div class="metric-label">Deployment Status</div>
+                            <div class="metric-value">+37%</div>
+                            <div class="metric-label">F1 on W-2 Forms</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">2nd Prize</div>
+                            <div class="metric-label">IBHack 2020</div>
                         </div>
                     </div>
                     <div class="project-tech">
                         <span class="tech-tag">BERT</span>
                         <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">NER</span>
+                        <span class="tech-tag">Extractive QA</span>
+                        <span class="tech-tag">RAG</span>
                         <span class="tech-tag">gRPC</span>
                         <span class="tech-tag">Kubernetes</span>
-                        <span class="tech-tag">NER</span>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">Affinity & Repurchase Intent System</h3>
-                    <div class="project-company">Walmart Labs</div>
+                    <h3 class="project-title">Diversity-Aware Personalized Recommendations</h3>
+                    <div class="project-company">Walmart Labs · Project Glass</div>
                 </div>
                 <div class="project-content">
                     <p class="project-description">
-                        Built large-scale recommendation system with real-time affinity modeling for Walmart grocery,
-                        powering personalized experiences for millions of customers. Granted US Patent.
+                        Built large-scale personalization models for Walmart's online grocery home page powering recommendations for millions of customers. Developed product-type affinity features (transaction, view, cart data), a separate model for long inter-purchase interval items, and basket-size prediction — achieving +1% basket prediction accuracy at Walmart's massive scale. Filed patent for diversity-aware recommendation approach (US12406282B2, now granted and cited by Pinterest, Inc.). Work contributed to Walmart Project Glass, a major strategic platform merger covered by TechCrunch and Grocery Dive.
                     </p>
                     <div class="project-metrics">
                         <div class="project-metric">
                             <div class="metric-value">+1%</div>
-                            <div class="metric-label">Basket Prediction</div>
+                            <div class="metric-label">Basket Prediction Accuracy</div>
                         </div>
                         <div class="project-metric">
-                            <div class="metric-value">Patent</div>
-                            <div class="metric-label">US12406282B2</div>
+                            <div class="metric-value">Granted</div>
+                            <div class="metric-label">US12406282B2 · Cited by Pinterest</div>
                         </div>
                     </div>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Spark</span>
-                        <span class="tech-tag">Recommendation Systems</span>
-                        <span class="tech-tag">Real-time ML</span>
+                        <span class="tech-tag">Collaborative Filtering</span>
+                        <span class="tech-tag">Diversity-Aware Ranking</span>
+                        <span class="tech-tag">Affinity Modeling</span>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">Abstractive Summarization for Legal & Financial Documents</h3>
-                    <div class="project-company">Goldman Sachs × UMass Amherst</div>
+                    <h3 class="project-title">NLP Research — Summarization & Relation Extraction</h3>
+                    <div class="project-company">Goldman Sachs × UMass Amherst IESL · ACL 2021 · EMNLP 2020</div>
                 </div>
                 <div class="project-content">
                     <p class="project-description">
-                        Industrial research project in collaboration with Goldman Sachs and UMass Amherst's Information Extraction and Synthesis Laboratory (IESL).
-                        Built scalable abstractive summarization models that preserve critical facts in legal and financial documents using pre-trained language models.
+                        Under Prof. Andrew McCallum, built a GPT-2-based sentence saliency classifier for low-resource long document summarization, outperforming strong baselines by +6 ROUGE points (ACL 2021, 83 citations — cited in NeurIPS 2023 by Google Research). Proposed a nearest-neighbors relation prediction method for scientific procedural text, outperforming prior work by up to +3 F1 points across multiple datasets (EMNLP 2020). Applied summarization research in collaboration with Goldman Sachs to build NLP tools for their financial analysts.
                     </p>
                     <div class="project-metrics">
                         <div class="project-metric">
-                            <div class="metric-value">4</div>
-                            <div class="metric-label">Research Scientists</div>
+                            <div class="metric-value">128</div>
+                            <div class="metric-label">Total Scholar Citations</div>
                         </div>
                         <div class="project-metric">
-                            <div class="metric-value">Novel</div>
-                            <div class="metric-label">Sentence Classifier</div>
+                            <div class="metric-value">+6</div>
+                            <div class="metric-label">ROUGE Points (ACL 2021)</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">NeurIPS '23</div>
+                            <div class="metric-label">Cited by Google Research</div>
                         </div>
                     </div>
                     <div class="project-tech">
-                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">GPT-2</span>
                         <span class="tech-tag">Transformers</span>
                         <span class="tech-tag">Abstractive Summarization</span>
-                        <span class="tech-tag">Pre-trained LMs</span>
+                        <span class="tech-tag">Relation Extraction</span>
+                        <span class="tech-tag">Low-Resource NLP</span>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">Probing Language Models for Long-term Dependencies</h3>
-                    <div class="project-company">UMass Amherst - NGRAM NLP Lab</div>
+                    <h3 class="project-title">Empirical Benchmarks of Linear Regularization</h3>
+                    <div class="project-company">Instacart × Independent Research · Published Feb 2026</div>
                 </div>
                 <div class="project-content">
                     <p class="project-description">
-                        Research project investigating the use of long-term context in large-scale pretrained language models like Transformer-XL and BERT.
-                        Designed probe tasks and evaluation metrics to quantify context usage by models in incremental cloze tasks. Analyzed varying use
-                        of context for different word types (content vs function words, frequent vs infrequent words).
+                        Co-designed and co-executed a 134,400-simulation benchmarking study of scikit-learn regularization methods (Ridge, Lasso, ElasticNet, Relaxed Lasso) across a 7-dimensional hyperparameter manifold, calibrated against 8 Instacart production ML models. Applied omega-squared effect-size analysis and two-way ANOVA to identify the primary determinants of method divergence. Key findings: ElasticNet's 5–8x compute overhead yields only 0.04% median RMSE gain over Ridge; in underdetermined regimes, eigenvalue dispersion (not sparsity) drives Ridge vs. Lasso performance. Distilled into an actionable practitioner decision flowchart.
                     </p>
                     <div class="project-metrics">
                         <div class="project-metric">
-                            <div class="metric-value">5</div>
-                            <div class="metric-label">Months</div>
+                            <div class="metric-value">134,400</div>
+                            <div class="metric-label">Simulations</div>
                         </div>
                         <div class="project-metric">
-                            <div class="metric-value">Novel</div>
-                            <div class="metric-label">Probe Tasks</div>
+                            <div class="metric-value">8</div>
+                            <div class="metric-label">Production Models Analyzed</div>
+                        </div>
+                        <div class="project-metric">
+                            <div class="metric-value">960</div>
+                            <div class="metric-label">Unique Configurations</div>
                         </div>
                     </div>
                     <div class="project-tech">
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Language Models</span>
-                        <span class="tech-tag">BERT</span>
-                        <span class="tech-tag">Transformer-XL</span>
-                        <span class="tech-tag">Research</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">Financial Data Analysis using Machine Learning</h3>
-                    <div class="project-company">Isenberg School of Management - UMass Amherst</div>
-                </div>
-                <div class="project-content">
-                    <p class="project-description">
-                        Research project in collaboration with Prof. Anurag Sharma focusing on financial data analysis using Machine Learning.
-                        Developed ML models for quantitative financial analysis and investment strategies.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="project-metric">
-                            <div class="metric-value">9</div>
-                            <div class="metric-label">Months</div>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Machine Learning</span>
-                        <span class="tech-tag">Financial Analysis</span>
-                        <span class="tech-tag">Quantitative Analysis</span>
-                        <span class="tech-tag">Research</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">Ridge / Lasso / ElasticNet</span>
+                        <span class="tech-tag">Statistical Analysis</span>
+                        <span class="tech-tag">ANOVA</span>
+                        <span class="tech-tag">Simulation</span>
                     </div>
                 </div>
             </div>
