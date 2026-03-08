@@ -114,7 +114,7 @@
         }
         .nav-links {
             display: flex;
-            gap: 1.75rem;
+            gap: 1.375rem;
             list-style: none;
         }
         .nav-links a {
@@ -647,19 +647,28 @@
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
             .nav-links.mobile-open {
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 position: absolute;
                 top: 58px;
                 left: 0;
                 right: 0;
                 background: var(--bg);
                 border-bottom: 1px solid var(--border);
-                padding: 1.5rem 2rem;
-                gap: 1.125rem;
+                padding: 1.25rem 2rem;
+                gap: 0;
                 z-index: 99;
             }
-            .nav-links.mobile-open a { font-size: 1rem; }
+            .nav-links.mobile-open li {
+                border-bottom: 1px solid var(--border);
+                padding: 0.75rem 0;
+            }
+            .nav-links.mobile-open li:nth-child(odd) {
+                padding-right: 1rem;
+                border-right: 1px solid var(--border);
+            }
+            .nav-links.mobile-open li:nth-last-child(-n+2) { border-bottom: none; }
+            .nav-links.mobile-open a { font-size: 0.875rem; }
         }
         @media (max-width: 768px) {
             .hero-layout {
@@ -702,7 +711,9 @@
                     <li><a href="#work">Work</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#research">Research</a></li>
+                    <li><a href="#writing">Writing</a></li>
                     <li><a href="#speaking">Speaking</a></li>
+                    <li><a href="#recognition">Recognition</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
